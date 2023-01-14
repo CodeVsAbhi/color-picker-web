@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color-Picker Game</title>
+ </head>
+    <style>
+        body {
+            background-image: url('game.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .box {
+            border: 2px solid aqua;
+            border-radius: 340px;
+        }
+
+        .color-card {
+            height: 50px;
+            border-radius: 52% 52% 0%;
+        }
+
+        .color-card:hover {
+            border-radius: 50%;
+        }
+
+        .parent {
+            cursor: pointer;
+            border-radius: 52% 52% 0%;
+            display: inline-block;
+            width: 50px;
+            margin: 10px;
+            border: 1px solid gray;
+            box-shadow: 4px 4px 22px whitesmoke;
+        }
+
+        .parent:hover {
+            border-radius: 50%;
+            font-size: larger;
+        }
+
+        .abhi {
+            margin-top: 8%;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            text-shadow: 7px 6px 12px rgb(194, 116, 187);
+            font-weight: 700;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 32px;
+            background: -webkit-linear-gradient(rgb(96, 206, 243), rgb(114, 195, 39));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .abhi:hover {
+            background: -webkit-linear-gradient(rgb(196, 83, 151), rgb(91, 166, 231));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 40px;
+            text-shadow: 7px 6px 12px lightskyblue;
+        }
+
+        #container {
+            display: flex;
+            width: 50%;
+            margin-top: 0%;
+            margin-left: 17%;
+            margin-right: 17%;
+            margin-bottom: 13%;
+            padding-left: 10%;
+            justify-content: center;
+        }
+
+        footer {
+            display: flex;
+           
+            justify-content: flex-start;
+            right: 20%;
+            font-style: italic;
+            color: rgb(53, 57, 94);
+            transform: translateX(30%);
+        }
+
+        .nav {
+            border-radius: 30px;
+            display: flex;
+            background: url('game.png');
+            z-index: -2;
+            opacity: 1.5;
+            position: sticky;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .nav ul {
+            position: relative;
+            display: flex;
+            gap: 33px;
+        }
+    
+        .logo {
+            border: none;
+            padding-top: 10px;
+        }
+    
+        .logo img {
+            width: 100px;
+            height: 70px;
+            z-index: -1;
+            opacity: 1.4;
+            padding-top: 10px;
+            border-radius: 35px;
+        }
+    
+        li {
+            font-size: x-large;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            border-bottom: 1PX solid skyblue;
+            padding: 3px 14px;
+    
+    
+            background: -webkit-linear-gradient(rgb(201, 121, 121), rgb(236, 11, 112));
+            -webkit-background-clip: text;
+            font-weight: 400;
+            -webkit-text-fill-color: transparent;
+            list-style: none;
+            display: flex;
+            justify-self: center;
+            align-self: center;
+        }
+    
+        li:hover {
+            border: 1PX SOLID whitesmoke;
+    
+        }
+    
+    </style>
+
+</head>>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li class="logo"><img src="boy.jpg" width="30px" height="30px"></li>
+            <li>Home</li>
+            <li>About</li>
+            <li>Source Code</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <div class="box">
+        <h1 class="abhi">Let play the color Picker game</h1>
+        <div id="container">
+            <div id="root">
+
+            </div>
+
+            <div id="card">
+
+            </div>
+        </div>
+        <footer>Created by Abhijeetdd</footer>
+    </div>
+    <script>
+        rootObj = document.getElementById('root');
+        cardObj = document.getElementById('card');
+
+        filled_colors = ['#553', 'red', 'green', 'blue', 'pink', 'magenta', 'violet', 'beige',];
+
+        empty_colors = ['white', 'white', 'white', 'white', 'white', 'white', 'white', 'white'];
+
+        selectedObj = undefined;
+
+        function render(colors, obj, callback) {
+            for (i = 0; i < colors.length; i++) {
+                div = `<div class='parent'>                    
+                        <div class='color-card' onclick='${callback}(this)' style='background-color:${colors[i]}'>
+
+                        </div>
+                </div>`
+
+                obj.innerHTML += div;
+            }
+        }
+
+        //CRUD
+        function pickColor(obj) {
+            selectedObj = obj;
+        }
+        function applyColor(obj) {
+            obj.style.backgroundColor = selectedObj.style.backgroundColor;
+        }
+
+        render(filled_colors, rootObj, 'pickColor')
+        render(empty_colors, cardObj, 'applyColor')
+
+
+    </script>
+</body>
+
+</html>

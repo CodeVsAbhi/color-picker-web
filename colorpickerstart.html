@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color-Picker Game</title>
+</head>
+<style>
+    body {
+        background-image: url('game.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .nav {
+        border-radius: 30px;
+        display: flex;
+        background: url('game.png');
+        z-index: -2;
+        opacity: 1.5;
+        position: sticky;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav ul {
+        position: relative;
+        display: flex;
+        gap: 33px;
+    }
+
+    .logo {
+        border: none;
+        padding-top: 10px;
+    }
+
+    .logo img {
+        width: 100px;
+        height: 70px;
+        z-index: -1;
+        opacity: 1.4;
+        padding-top: 10px;
+        border-radius: 35px;
+    }
+
+    li {
+        font-size: x-large;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        border-bottom: 1PX solid skyblue;
+        padding: 3px 14px;
+
+
+        background: -webkit-linear-gradient(rgb(201, 121, 121), rgb(236, 11, 112));
+        -webkit-background-clip: text;
+        font-weight: 400;
+        -webkit-text-fill-color: transparent;
+        list-style: none;
+        display: flex;
+        justify-self: center;
+        align-self: center;
+    }
+
+    li:hover {
+        border: 1PX SOLID whitesmoke;
+
+    }
+
+    .container {
+        width: 800PX;
+        height: 400px;
+        font-size: 30px;
+        display: block;
+        margin: 110px auto;
+
+        border: 2px solid black;
+        border-top: 2px solid aqua;
+        border-bottom: 2px solid aqua;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        background: -webkit-linear-gradient(rgb(20, 21, 21), rgb(212, 211, 198));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding: 12px 0px;
+        background-color: aqua;
+        border-bottom: 1px solid whitesmoke;
+    }
+
+    p {
+        text-align: center;
+        margin: 12px 12px;
+        color: whitesmoke;
+
+    }
+
+    span {
+        display: flex;
+        font-weight: 200;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    span a {
+        text-decoration: none;
+        background: -webkit-linear-gradient(rgb(67, 200, 227), rgb(195, 124, 180));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: xx-large;
+    }
+
+    span:hover {
+        text-shadow: 1px 1px 20px whitesmoke;
+        font-weight: 600;
+    }
+</style>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li class="logo"><img src="boy.jpg" width="30px" height="30px"></li>
+            <li>Home</li>
+            <li>About</li>
+            <li>Source Code</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <div class="container">
+        <h1>Color picker simple Game</h1>
+        <p>hi friends this is one of the pratice website project.In this i make a color picker game by using HTML,CSS &
+            JAVASCRIPT.This project further can be modified for image Maching game. HOPE SO YOU ALL ENJOY THIS ONE </p>
+        <SPAN>
+            <a href="http://127.0.0.1:5500/colorpicker.html">START</a>
+        </SPAN>
+    </div>
+</body>
+
+</html>
